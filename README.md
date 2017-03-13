@@ -18,7 +18,7 @@ Installation
 
 Links
 -----
-http://andeons.com/listail-gerador-de-arquivos-lst/
+http://andeons.com/2015/05/listail-gerador-de-arquivos-lst.html
 
 http://synfig.org
 
