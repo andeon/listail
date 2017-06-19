@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+Actions=Listail;
+Icon=dialog-layers
+Encoding=UTF-8
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=image/*
+
+[Desktop Action Listail]
+Name=Listail - List File Generator
+Icon=dialog-layers
+Exec=t_wtitlebar="Listail - List File Generator"; t_quest="Do you want to generate a list file for Synfig Studio?";  t_about="The list file is simply a text file consisting of a frame \n rate followed by a list of images to display.";   t_fps="Please enter the number of Frames per Second (FPS):"; t_file="Please enter the filename for your list file:";   t_sucess="was successfully generated!";  kdialog --title "$t_wtitlebar" --yesno "$t_about\n\n$t_quest" &&   c_frames=`kdialog --title "$t_wtitlebar" --inputbox  "$t_fps" 25 2>&1` &&   c_list=`kdialog --title "$t_wtitlebar" --inputbox  "$t_file" list-img 2>&1`;    [ $? -ne 0 ] && exit 1; echo FPS $c_frames'\n' > $c_list.lst; ls *.jpg *.png *.ppm *.tiff *.gif 2> /dev/null | sed "/$c_list.lst/d" >> $c_list.lst;   kdialog --title "$t_wtitlebar" --msgbox "$c_list.lst $t_sucess"; fi; fi    
