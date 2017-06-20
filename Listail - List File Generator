@@ -1,6 +1,6 @@
 #!/bin/bash
 ####### Listail Create a list of images to 'lst' file
-####### Version 0.1
+####### Version 0.2
 ####### Created by Anderson Prado (AndeOn), andeons.com
 ####### Licensed under the GNU GENERAL PUBLIC LICENSE, Version 2
 ### Install in ~/.local/share/nautilus/scripts
@@ -22,7 +22,7 @@ c_list=`gdialog --title "$t_wtitlebar" --inputbox  "$t_file" 0 0 list-img 2>&1`
 	[ $? -ne 0 ] && exit 1
 
 	echo FPS $c_frames > $c_list.lst 
-	ls -p | grep -v / | sed "/$c_list.lst/d" >> $c_list.lst
+	ls -p *.jpg *.jpeg *.png *.ppm *.tiff *.tif *.gif | grep -v / | sed "/$c_list.lst/d" >> $c_list.lst
 
 gdialog --title "$t_wtitlebar" --msgbox "$c_list.lst $t_sucess" 0 0
 
