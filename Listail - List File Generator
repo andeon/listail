@@ -12,7 +12,7 @@ t_about="The list file is simply a text file consisting of a frame rate
 followed by a list of images to display." 
 t_quest="Do you want to generate a list file for Synfig Studio?"
 t_fps="Please enter the number of Frames per Second (FPS):"
-t_file="Please enter the filename for your list file:"
+t_file="Please enter the filename for your file list:"
 t_sucess="was successfully generated!"
 
 gdialog --title "$t_wtitlebar" --yesno "$t_about\n\n$t_quest" 20 0 &&
